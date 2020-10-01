@@ -1,0 +1,29 @@
+#!/bin/bash
+# This program will tell you if it is warm outside!
+# This part ensures a temp is inputted
+
+echo -n "What is the temperature outside? "
+read -t 10 TEMP
+
+if [ "$TEMP" == "" ]; then
+        echo "..."
+        echo "Well, are you freezing or melting?"
+        exit
+fi
+
+# This part ensures only an Integer number is inputted
+# Using a successful exit code from egrep
+
+echo $TEMP | egrep '^[0-9]+$' &>/dev/null
+if [ "$?" -ne "0" ]; then
+        echo "Temperature has to be a number!"
+        exit
+fi
+
+# This part answers the big question
+
+if [ "$TEMP" -ge "20" ]; then
+        echo "Wow! It is warm!"
+else
+        echo "Brrrr it's cold!"
+fi
