@@ -1,0 +1,19 @@
+#!/bin/bash
+# This program is excited to finally meet Santa!
+
+# This part allows the script to be interactive
+echo -n 'What is your name? '
+read -t 12 NAME
+
+# Verify it's an actual name (can't be empty)
+if [ "$NAME" == "" ]; then
+        echo "You don't want to tell me?"
+        exit
+fi
+
+# This part is the greeting, includes 'or' -o for lowercase
+if [ "$NAME" == 'Santa' -o "$NAME" == 'santa' ]; then
+        echo "WOW! I can't believe it's actually you!"
+else
+        echo "Hi $NAME, nice to meet you."
+fi
