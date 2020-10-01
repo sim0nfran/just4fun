@@ -1,0 +1,51 @@
+#!/bin/bash
+# This program will provide information about files and directories!
+
+# ensure item is added
+if [ "$#" -ne "1" ]; then
+        echo "Please choose a path to something"
+        exit
+fi
+
+# check if EXISTS
+if [ -e "$1" ]; then
+        echo "Yes, it exists."
+else
+        echo "Sorry, not in the jedi archives."
+        exit
+fi
+
+# check if item is a FILE
+if [ -f "$1" ]; then
+        echo "It is a file"
+else
+        echo "It's not a file"
+fi
+
+# check if item is a DIRECTORY
+if [ -d "$1" ]; then
+        echo "It is a directory"
+else
+        echo "It's not a directory"
+fi
+
+# check if item is READABLE
+if [ -r "$1" ]; then
+        echo "You can read it"
+else
+        echo "You don't have READ access"
+fi
+
+# check if item is WRITABLE
+if [ -w "$1" ]; then
+        echo "You can modify it"
+else
+        echo "You don't have WRITE access"
+fi
+
+# check if item is EXECUTABLE
+if [ -x "$1" ]; then
+        echo "You can run it!"
+else
+        echo "You don't have EXECUTE access"
+fi
