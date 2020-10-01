@@ -1,0 +1,19 @@
+#!/bin/bash
+# This program will find the total occurrances of a word in all text files
+
+echo -n "Which word are you looking for? "
+read -t 12 WORD
+echo -n "And in which directory? "
+read -t 16 LOOK
+
+if [ "$WORD" == "" ]; then
+	echo "Maybe next time"
+	exit
+fi
+
+if [ ! -d "$LOOK" ]; then
+	echo "Please enter a valid directory"
+	exit
+fi
+
+find $LOOK -name *.txt -exec grep -c $WORD '{}' \; | awk '{x+=$0;}END{print x}'
