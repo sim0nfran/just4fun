@@ -1,0 +1,8 @@
+#!/bin/bash
+# Use this code to print an error message
+# if script includes commands that require elevated privileges
+
+if [ $(id -u) != "0" ]; then
+        echo "You must be the superuser to run this script!" >&2
+        exit 1
+fi
