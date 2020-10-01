@@ -1,0 +1,23 @@
+#!/usr/bin/python3
+# This program will tell you if a specified year is a leap year!
+
+# Get a year from the user and ensure it is an integer number
+year = int(input("Enter a year: "))
+
+# Evaluate using the following algorhithm:
+# if the year number isn't divisible by four, it's a common year;
+# otherwise, if the year number isn't divisible by 100, it's a leap year;
+# otherwise, if the year number isn't divisible by 400, it's a common year;
+# otherwise, it's a leap year.
+
+if year < 1582:
+    print("Not within the Gregorian calendar period.")
+else:
+    if year % 4 != 0:
+        print("The year", year, "is a Common year.")
+    elif year % 100 != 0:
+        print("The year", year, "is a Leap year!")
+    elif year % 400 != 0:
+        print("The year", year, "is a Common year.")
+    else:
+        print("The year", year, "is a Leap year!")
