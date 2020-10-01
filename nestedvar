@@ -1,0 +1,7 @@
+#!/bin/bash
+# var inside var = 'nested variables'
+
+right_now=$(date +"%x %r %Z")
+time_stamp="Script ran $right_now by $USER"
+
+echo $time_stamp
