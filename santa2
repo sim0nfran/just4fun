@@ -1,0 +1,17 @@
+#!/bin/bash
+# This program can pick Santa out of a crowd!
+
+# ensure we get a couple names (1 or more)
+if [ "$#" -lt "1" ]; then
+        echo "Well, who's all here?"
+        exit
+fi
+
+# Send a nice greeting to everyone
+for NAME in $*; do
+        if [ "$NAME" == "Santa" -o "$NAME" == "santa" ]; then
+                echo "WOW! Santa is here too??"
+        else
+                echo "Hi $NAME, nice to meet you."
+        fi
+done
