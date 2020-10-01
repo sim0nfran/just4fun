@@ -1,0 +1,27 @@
+#!/bin/bash
+# This program would like to know a little more about you!
+# First, get a name and MAKE SURE you get a name
+
+echo -n "What is your name? "
+read NAME
+
+if [ "$NAME" == "" ]; then
+        echo "You don't want to tell me?"
+        exit
+fi
+
+# Second, get an age that HAS to be a number
+
+echo -n "How old are you? "
+read AGE
+
+echo $AGE | egrep '^[0-9]+$' &>/dev/null
+if [ "$?" -ne "0" ]; then
+        echo "Your age has to be a number!"
+        exit
+fi
+
+# Then return a nice message!
+
+echo "Well hello $NAME, nice to meet you"
+echo "And already $AGE years old..?"
