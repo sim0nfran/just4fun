@@ -1,0 +1,5 @@
+#!/usr/bin/python3
+# This program is bananas!
+
+an=int(input("How many bananas? "))
+print("B"+("an"*an)+"a.")
