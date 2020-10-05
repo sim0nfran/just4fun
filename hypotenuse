@@ -1,0 +1,11 @@
+#!/usr/bin/python3
+# This program evaluates the hypotenuse of a right-angle triangle
+
+#leg_a = float(input("a = "))
+#leg_b = float(input("b = "))
+#hypo = (leg_a**2 + leg_b**2) ** .5
+#print("c = ", hypo)
+
+leg_a = float(input("Input first side length: "))
+leg_b = float(input("Input second side length: "))
+print("Hypotenuse length is " + str((leg_a**2 + leg_b**2) ** .5))
